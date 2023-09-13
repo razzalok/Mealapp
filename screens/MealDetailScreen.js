@@ -24,9 +24,11 @@ const MealDetailScreen = ({ route,navigation }) => {
   const mealIsFavorite = favoriteMealsIds.includes(mealId)
   function changeFavoriteStatusHandler(){
     if(mealIsFavorite){
-      favoriteMealsCtx.removeFavorite(mealId)
+      // favoriteMealsCtx.removeFavorite(mealId)
+      dispatch(removeFavorites({id:mealId}))
     }else{
-      favoriteMealsCtx.addFavorite(mealId)
+      // favoriteMealsCtx.addFavorite(mealId)
+      dispatch(addFavorites({id:mealId}))
     }
   }
   useLayoutEffect(()=>{
